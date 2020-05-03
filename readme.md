@@ -1,0 +1,1 @@
+This project contains some tips and notes from the book : **Practical FP in Scala - A hands-on approach** by **Gabriel Volpe**.
