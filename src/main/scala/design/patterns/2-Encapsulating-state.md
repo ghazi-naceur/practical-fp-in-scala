@@ -11,7 +11,7 @@ state of the application, unless it is used with ``classy lenses``.
 
 - Since state is mutable, it must be handled to guarantee that it will not leak, so the interpreter's (`Ref` of example)
  constructor will private, and we use a smart constructor instead :
- ````aidl
+ ````scala
 import cats.effect.Sync
 import cats.implicits._
 

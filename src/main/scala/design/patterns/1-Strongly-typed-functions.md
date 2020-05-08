@@ -3,7 +3,7 @@
 - To get rid of the ``.copy`` method, you can use a ``sealed abstract class``.
 - ``case class`` can causes performance issues and a rise in memory allocation.
 - It is preferable to use ```Newtype```, which is a zero-cost wrappers with no runtime overhead.
-````aidl
+````scala
 import io.estatico.newtype.macros._
 
 @newtype case class Username(value: String)
@@ -11,13 +11,13 @@ import io.estatico.newtype.macros._
 - To use ```Newtype```, we need an extra plugin, and a plugin flag : ``-Ymacro-annotations``.
 - ```Newtype``` will be replaced, in Scala 3, by ``opaque types``.
 - ```Newtype``` can be constructed as well using this way :
-````aidl
+````scala
 import io.estatico.newtype.ops._
 
 "something".coerce[Username]
 ````
 - ```Refinement Type``` guarantees validating data at compile-time and runtime.
-````aidl
+````scala
 import eu.timepit.refined._
 import eu.timepit.refined.auto._
 import eu.timepit.refined.types.string.NonEmptyString._
@@ -25,7 +25,7 @@ import eu.timepit.refined.types.string.NonEmptyString._
 def create(value: NonEmptyString): F[Option[User]]
 ````
 - We can create our custom ```Refinement Type```:
-````aidl
+````scala
 import eu.timepit.refined.api.Refined
 import eu.timepit.refined.collection.Contains
 
